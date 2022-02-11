@@ -1,8 +1,11 @@
 
-       
+
+//html 요소 선택자
 const listElement = document.querySelectorAll(".table-component__list__element");
 const listTitle = document.querySelector(".table-component__header h4");
 const progressNum = document.querySelector("main>span");
+
+//필요한 데이터
 const optionList ={
     title : {
         department : "내 소속 학과는?",
@@ -20,19 +23,27 @@ const optionList ={
 
 
 };
-
 const textList = ["department","admissionPath","admissionYear","detailedMajor","track"];
 
+//변수
 let currentProgress = 1;
-
-
 let whatYouGot = [];
 
+
+const moveToSchedulePage = () => {
+    location.href="schedulling-page.html"
+}
+
 const handleListClick = (event) => {
+    currentProgress += 1;
+    if(currentProgress === 6){
+        moveToSchedulePage();
+    }
+
+
     console.log(event);
     whatYouGot.push(event.path[0].innerText);
     console.log(whatYouGot);
-    currentProgress += 1;
     listTitle.innerText = optionList.title[textList[currentProgress-1]];
     let number = 0;
     for(number =1; number < optionList[textList[currentProgress-1]].length; number++){
