@@ -1,4 +1,3 @@
-console.log("hello");
 
        
 const listElement = document.querySelectorAll(".table-component__list__element");
@@ -24,26 +23,34 @@ const optionList ={
 
 const textList = ["department","admissionPath","admissionYear","detailedMajor","track"];
 
-let ha = 1;
+let currentProgress = 1;
 
 
+let whatYouGot = [];
 
-const handleListClick = ()=>{
-    ha += 1;
-    listTitle.innerText = optionList.title[textList[ha-1]];
+const handleListClick = (event) => {
+    console.log(event);
+    whatYouGot.push(event.path[0].innerText);
+    console.log(whatYouGot);
+    currentProgress += 1;
+    listTitle.innerText = optionList.title[textList[currentProgress-1]];
     let number = 0;
-    for(number =1; number < optionList[textList[ha-1]].length; number++){
+    for(number =1; number < optionList[textList[currentProgress-1]].length; number++){
         const mainChoice = document.querySelector(`.table-component__list__element:nth-child(${number})`);
         mainChoice.innerHTML = `<li>
-        <span>${optionList[textList[ha-1]][number]}</span>
+        <span>${optionList[textList[currentProgress-1]][number]}</span>
         <!--todo: icon chevron-right-->
     </li>`
     }
-    progressNum.innerText = `${ha}/5`
+    progressNum.innerText = `${currentProgress}/5`
+    
+    
+
 }
 
-
-listElement[0].addEventListener("click",handleListClick);
+for(let i = 0; i<4; i++){
+    listElement[i].addEventListener("click",handleListClick);
+}
 
 
 
