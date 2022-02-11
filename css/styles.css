@@ -1,0 +1,108 @@
+@import "reset.css";
+@import "variables.css";
+
+/* component */
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.screen-header {
+  text-align: center;
+}
+.screen-header__title {
+  font-size: var(--main-title-font-size);
+  margin-top: 25px;
+  font-weight: 800;
+  display: block;
+  color: #8f87ec;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.screen-header__subtitle {
+  font-size: 20px;
+  font-weight: 800;
+  margin-top: 20px;
+  display: block;
+  opacity: 0.7;
+}
+
+.table-component {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 100px;
+  width: var(--list-width);
+  box-shadow: var(--shadow);
+}
+
+.table-component__header,
+.table-component__list {
+  width: inherit;
+  border-radius: 0px 0px 12px 12px;
+}
+
+.table-component__header {
+  height: var(--purple-height);
+  background-color: #5d54c9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px 12px 0px 0px;
+}
+
+.table-component__title {
+  color: #ffffff;
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.table-component__list {
+  height: var(--white-height);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 0px 0px 12px 12px;
+  /* 왜 아래는 border-radius가 안생기지 */
+}
+
+.table-component__list__element {
+  color: #7b61ff;
+  height: 39px;
+  width: var(--button-width);
+  box-shadow: var(--shadow);
+  border-radius: 12px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.table-component__list__element a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.table-component__list__element:hover {
+  cursor: pointer;
+}
+.table-component__list__element span {
+  color: #2b275f;
+  font-size: 32px;
+  font-weight: 600;
+}
+
+.progress-number {
+  margin-top: 20px;
+  font-size: 25px;
+}
+
+footer {
+  margin-top: 40px;
+}

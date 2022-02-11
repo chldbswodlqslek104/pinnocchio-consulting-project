@@ -47,11 +47,8 @@ const handleListClick = (event) => {
     listTitle.innerText = optionList.title[textList[currentProgress-1]];
     let number = 0;
     for(number =1; number < optionList[textList[currentProgress-1]].length; number++){
-        const mainChoice = document.querySelector(`.table-component__list__element:nth-child(${number})`);
-        mainChoice.innerHTML = `<li>
-        <span>${optionList[textList[currentProgress-1]][number]}</span>
-        <!--todo: icon chevron-right-->
-    </li>`
+        const mainChoice = document.querySelector(`.table-component__list__element:nth-child(${number}) span`);
+        mainChoice.innerHTML = `${optionList[textList[currentProgress-1]][number]}`
     }
     progressNum.innerText = `${currentProgress}/5`
     
