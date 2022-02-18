@@ -47,6 +47,7 @@
   padding: 10px;
   display: flex;
   align-items: center;
+  margin-top: 20px;
 }
 
 .table-component__list__element a {
