@@ -56,6 +56,8 @@ const handleListClick = (event) => {
 
 }
 
+
+//이벤트 핸들러
 for(let i = 0; i<4; i++){
     listElement[i].addEventListener("click",handleListClick);
 }
