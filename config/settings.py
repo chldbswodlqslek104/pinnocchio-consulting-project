@@ -11,7 +11,6 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
 from pathlib import Path
-#import my_settings
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -24,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-9oug#o1nc&&0yc8#rjg_7@cgwr2t!drjag^*l#7=w=sp5d@zns'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['choiyunjae.pythonanywhere.com','127.0.0.1' ,]
 
@@ -75,22 +74,13 @@ WSGI_APPLICATION = 'config.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
-#DATABASES = {
-#   'default': {
-#        'ENGINE': 'django.db.backends.sqlite3',
-#        'NAME': BASE_DIR / 'db.sqlite3',
-#    }
-#}
-
-#DATABASES = my_settings.DATABASES
-
 DATABASES = {
     'default' : {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'new_schema',
-        'USER': 'root',
-        'PASSWORD': 'freefree104460!',
-        'HOST': 'localhost',
+        'NAME': 'choiyunjae$project',
+        'USER': 'choiyunjae',
+        'PASSWORD': 'teampw220207!!',
+        'HOST': 'choiyunjae.mysql.pythonanywhere-services.com',
     }
 }
 
