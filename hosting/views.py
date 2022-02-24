@@ -16,7 +16,7 @@ def index(request):
 def DBListView(request):
     try: 
         strSql = "SELECT special_option_idx, hased_options FROM micro_cases"
-        datas = GetQuerySetFromDataBases()
+        datas = GetQuerySetFromDataBases(strSql)
         data = [
             {'special_option_idx': data[0],'hased_options': data[1],}
             for data in datas]
