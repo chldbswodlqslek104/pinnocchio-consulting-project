@@ -13,7 +13,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
 
 # Quick-start development settings - unsuitable for production
@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-9oug#o1nc&&0yc8#rjg_7@cgwr2t!drjag^*l#7=w=sp5d@zns'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['choiyunjae.pythonanywhere.com','127.0.0.1' ,]
+ALLOWED_HOSTS = ['choiyunjae.pythonanywhere.com','127.0.0.1' ,'localhost', '3306', '*',]
 
 
 # Application definition
@@ -77,10 +77,11 @@ WSGI_APPLICATION = 'config.wsgi.application'
 DATABASES = {
     'default' : {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'choiyunjae$project',
-        'USER': 'choiyunjae',
-        'PASSWORD': 'teampw220207!!',
-        'HOST': 'choiyunjae.mysql.pythonanywhere-services.com',
+        'NAME': 'project',
+        'USER': 'root',
+        'PASSWORD': 'freefree104460!',
+        'HOST': 'localhost',
+        'PORT': '3306',
     }
 }
 

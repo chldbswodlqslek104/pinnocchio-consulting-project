@@ -9,7 +9,7 @@ def GetQuerySetFromDataBases(request):
 
     except:
         connection.rollback()
-        print("Failed selecting in empty")
+        print("Failed selecting in GetQuerySetFromDataBases")
 
 
     return result
