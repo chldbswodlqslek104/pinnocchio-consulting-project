@@ -117,7 +117,7 @@ class DjangoSession(models.Model):
 
 
 class MicroCases(models.Model):
-    special_option_idx = models.IntegerField()
+    special_option_idx = models.IntegerField(primary_key=True)
     hased_options = models.CharField(max_length=40, blank=True, null=True)
     entry_year = models.IntegerField(blank=True, null=True)
     basic_subject = models.IntegerField(blank=True, null=True)
