@@ -11,8 +11,8 @@ def Api2_list(request):
     if request.method == 'GET':
         query_set = Subjects.objects.all()
         serializer = SubjectsSerializer(query_set, many=True)
-        # strSql = "SELECT * FROM subjects"
+        # strSql = "SELECT * from subjects;"
         # datas = GetQuerySetFromDataBases(strSql)
         # print(datas)
         return JsonResponse(serializer.data, safe=False)
-        
+    

@@ -4,7 +4,9 @@ def GetQuerySetFromDataBases(request):
     try:
         cursor = connection.cursor()
         result = cursor.execute(request)
+        result = cursor.fetchall()
         connection.commit()
+        print(result)
         connection.close()
 
     except:

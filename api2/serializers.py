@@ -5,6 +5,4 @@ class SubjectsSerializer(serializers.ModelSerializer):
      class Meta:
         model = Subjects
         fields = '__all__'
-        
-    
 
