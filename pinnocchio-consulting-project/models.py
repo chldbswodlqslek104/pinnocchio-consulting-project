@@ -136,15 +136,17 @@ class DjangoSession(models.Model):
         db_table = 'django_session'
 
 
-class MicroCases(models.Model):
+
+ 
+class Requirements(models.Model):
     special_option_idx = models.IntegerField(primary_key=True)
-    hased_options = models.CharField(max_length=40, blank=True, null=True)
+    hashed_options = models.CharField(max_length=40, blank=True, null=True)
     entry_year = models.IntegerField(blank=True, null=True)
-    basic_subject = models.IntegerField(blank=True, null=True)
-    necess_subject = models.IntegerField(blank=True, null=True)
-    major_total_subject = models.IntegerField(blank=True, null=True)
-    common_subject = models.IntegerField(blank=True, null=True)
-    key_subject = models.IntegerField(blank=True, null=True)
+    basic_major_subject = models.IntegerField(blank=True, null=True)
+    necess_major_subject = models.IntegerField(blank=True, null=True)
+    total_major_subject = models.IntegerField(blank=True, null=True)
+    common_GE_subject = models.IntegerField(blank=True, null=True)
+    core_GE_subject = models.IntegerField(blank=True, null=True)
     total_subjects = models.IntegerField(blank=True, null=True)
 
     class Meta:
