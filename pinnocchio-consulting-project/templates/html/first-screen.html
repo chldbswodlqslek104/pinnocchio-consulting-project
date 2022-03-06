@@ -1,62 +1,54 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
     <title>Pinocchio</title>
-</head>
-<body>
-    <header class = "screen-header">
-        <h1 class = "screen-header__title">나는 졸업 어떻게 하지?</h1>
-        <span class ="screen-header__subtitle">본 페이지는 중앙대학교가 아닌 피노키오 공방에 의해 운영됩니다.</span>
+  </head>
+  <body>
+    <header class="screen-header">
+      <h1 class="screen-header__title">나는 졸업 어떻게 하지?</h1>
+      <span class="screen-header__subtitle"
+        >본 페이지는 중앙대학교가 아닌 피노키오 공방에 의해 운영됩니다.</span
+      >
     </header>
     <main>
-        <div class="table-component">
-            <div class = "table-component__header">
-                <h4 class = "table-component__title">내 소속 학과는?</h4>
-                <!--todo: question mark icon-->
-            </div>
-            
-            <ul class = "table-component__list">
-                <li class="table-component__list__element">
-                    <a>
-                        <span>공공인재학부</span>
-                        <i class="fa-solid fa-chevron-right fa-lg"></i>
-                    </a>
-                </li>
-                <li class="table-component__list__element">
-                    <a>
-                        <span>소프트웨어학부</span>
-                        <i class="fa-solid fa-chevron-right fa-lg"></i>                        
-                    </a>
-                </li>
-                <li class="table-component__list__element">
-                    <a>
-                        <span>선택지1</span>
-                        <i class="fa-solid fa-chevron-right fa-lg"></i>
-                    </a>
-                </li>
-                <li class="table-component__list__element">
-                    <a>
-                        <span>선택지1</span>
-                        <i class="fa-solid fa-chevron-right fa-lg"></i>
-                    </a>
-                </li>
-            </ul>
-
+      <div class="table-component">
+        <div class="table-component__header">
+          <h4 class="table-component__title">내 소속 학과는?</h4>
+          <!--todo: question mark icon-->
         </div>
 
-        <span class="progress-number">1/5</span>
+        <ul class="table-component__list">
+          <li class="table-component__list__element">
+            <a>
+              <span>공공인재학부</span>
+              <i class="fa-solid fa-chevron-right fa-lg"></i>
+            </a>
+          </li>
+          <li class="table-component__list__element">
+            <a>
+              <span>소프트웨어학부</span>
+              <i class="fa-solid fa-chevron-right fa-lg"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <span class="progress-number">1/5</span>
     </main>
     <footer>
-        <!--todo: 공방 아이콘-->
-        <span>Pinochio Workshop</span>
+      <!--todo: 공방 아이콘-->
+      <span>Pinochio Workshop</span>
     </footer>
 
-    <script src ="{% static 'js/setting-screen.js' %}"></script>
-    <script src="https://kit.fontawesome.com/c810f3fd62.js" crossorigin="anonymous"></script>
-</body>
+    <script src="{% static 'js/setting-screen.js' %}"></script>
+    <script
+      src="https://kit.fontawesome.com/c810f3fd62.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>

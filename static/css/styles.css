@@ -3,8 +3,7 @@
 
 /* component */
 @import "component/table-component.css";
-
-/*screen*/
+@import "component/criterion-table.css"; /*screen*/
 @import "screen/first-screen.css";
 @import "screen/schedulling-page.css";
 
