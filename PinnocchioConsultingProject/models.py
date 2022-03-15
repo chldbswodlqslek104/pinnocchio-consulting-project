@@ -2,9 +2,10 @@ from django.db import models
 
 # Create your models here.
 
+
 class AuthGroup(models.Model):
     name = models.CharField(unique=True, max_length=150)
-    
+
     class Meta:
         managed = False
         db_table = 'auth_group'
@@ -14,7 +15,7 @@ class AuthGroupPermissions(models.Model):
     id = models.BigAutoField(primary_key=True)
     group = models.ForeignKey(AuthGroup, models.DO_NOTHING)
     permission = models.ForeignKey('AuthPermission', models.DO_NOTHING)
-    
+
     class Meta:
         managed = False
         db_table = 'auth_group_permissions'
@@ -25,7 +26,7 @@ class AuthPermission(models.Model):
     name = models.CharField(max_length=255)
     content_type = models.ForeignKey('DjangoContentType', models.DO_NOTHING)
     codename = models.CharField(max_length=100)
-    
+
     class Meta:
         managed = False
         db_table = 'auth_permission'
@@ -43,7 +44,7 @@ class AuthUser(models.Model):
     is_staff = models.IntegerField()
     is_active = models.IntegerField()
     date_joined = models.DateTimeField()
-    
+
     class Meta:
         managed = False
         db_table = 'auth_user'
@@ -53,7 +54,7 @@ class AuthUserGroups(models.Model):
     id = models.BigAutoField(primary_key=True)
     user = models.ForeignKey(AuthUser, models.DO_NOTHING)
     group = models.ForeignKey(AuthGroup, models.DO_NOTHING)
-    
+
     class Meta:
         managed = False
         db_table = 'auth_user_groups'
@@ -64,15 +65,24 @@ class AuthUserUserPermissions(models.Model):
     id = models.BigAutoField(primary_key=True)
     user = models.ForeignKey(AuthUser, models.DO_NOTHING)
     permission = models.ForeignKey(AuthPermission, models.DO_NOTHING)
-    
+
     class Meta:
         managed = False
         db_table = 'auth_user_user_permissions'
         unique_together = (('user', 'permission'),)
-        
+
+
+class Colleges(models.Model):
+    colledg_idx = models.IntegerField(primary_key=True)
+    colledge_name = models.CharField(max_length=100, blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'colleges'
+
 
 class CreditRequirements(models.Model):
-    special_option_idx = models.IntegerField()
+    special_option_idx = models.IntegerField(primary_key=True)
     started_year = models.IntegerField(blank=True, null=True)
     ended_year = models.IntegerField(blank=True, null=True)
     basic_subject = models.IntegerField(blank=True, null=True)
@@ -89,6 +99,17 @@ class CreditRequirements(models.Model):
     class Meta:
         managed = False
         db_table = 'credit_requirements'
+
+
+class Departments(models.Model):
+    department_idx = models.IntegerField(primary_key=True)
+    department_name = models.CharField(max_length=100, blank=True, null=True)
+    show_as_an_option = models.IntegerField(blank=True, null=True)
+    colledg_idx = models.IntegerField()
+
+    class Meta:
+        managed = False
+        db_table = 'departments'
 
 
 class DjangoAdminLog(models.Model):
@@ -124,7 +145,7 @@ class DjangoMigrations(models.Model):
     class Meta:
         managed = False
         db_table = 'django_migrations'
-        
+
 
 class DjangoSession(models.Model):
     session_key = models.CharField(primary_key=True, max_length=40)
@@ -134,22 +155,49 @@ class DjangoSession(models.Model):
     class Meta:
         managed = False
         db_table = 'django_session'
- 
+
 
 class MicroCases(models.Model):
     special_option_idx = models.IntegerField(primary_key=True)
-    hashed_options = models.CharField(max_length=40, blank=True, null=True)
+    hased_options = models.CharField(max_length=40, blank=True, null=True)
     entry_year = models.IntegerField(blank=True, null=True)
-    basic_major_subject = models.IntegerField(blank=True, null=True)
-    necess_major_subject = models.IntegerField(blank=True, null=True)
-    total_major_subject = models.IntegerField(blank=True, null=True)
-    common_GE_subject = models.IntegerField(blank=True, null=True)
-    core_GE_subject = models.IntegerField(blank=True, null=True)
+    basic_subject = models.IntegerField(blank=True, null=True)
+    necess_subject = models.IntegerField(blank=True, null=True)
+    major_total_subject = models.IntegerField(blank=True, null=True)
+    common_subject = models.IntegerField(blank=True, null=True)
+    key_subject = models.IntegerField(blank=True, null=True)
     total_subjects = models.IntegerField(blank=True, null=True)
 
     class Meta:
         managed = False
         db_table = 'micro_cases'
+
+
+class SubjectType1(models.Model):
+    subject_type_1_idx = models.IntegerField(primary_key=True)
+    subject_type_1_name = models.CharField(max_length=100, blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'subject_type_1'
+
+
+class SubjectType2(models.Model):
+    subject_type_2_idx = models.IntegerField(primary_key=True)
+    subject_type_2_name = models.CharField(max_length=100, blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'subject_type_2'
+
+
+class SubjectType3(models.Model):
+    subject_type_3_idx = models.IntegerField(primary_key=True)
+    subject_type_3_name = models.CharField(max_length=100, blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'subject_type_3'
 
 
 class Subjects(models.Model):
@@ -184,5 +232,3 @@ class Subjects(models.Model):
     class Meta:
         managed = False
         db_table = 'subjects'
-
-
