@@ -6,7 +6,7 @@ from rest_framework.parsers import JSONParser
 from .models import Subjects
 from .serializers import SubjectsSerializer
 from django.db import connection
-from .database import GetQuerySetFromDataBases
+from .database import getQuerySetFromDatabasebySqlQueryInDataframe 
 # Create your views here.
 
 def index(request):
@@ -20,7 +20,7 @@ def index(request):
 def DBListView(request):
     try: 
         strSql = "SELECT special_option_idx, hased_options from micro_cases;"
-        datas = GetQuerySetFromDataBases(strSql)
+        datas = getQuerySetFromDatabasebySqlQueryInDataframe(strSql)
         data = [
             {'special_option_idx': data[0],'hased_options': data[1],}
             for data in datas]
@@ -40,7 +40,7 @@ def Api2_list(request):
         # serializer = SubjectsSerializer(query_set, many=True)
         # strSql = "SELECT * from subjects;"
         # datas = GetQuerySetFromDataBases(strSql)
-        test = [
+        result = [
             { 
         "subject_idx": 1,
 		"subject_name": "1",
@@ -72,7 +72,7 @@ def Api2_list(request):
         }
         for data in range(20)
         ]
-        serializer = SubjectsSerializer(test, many=True)
+        serializer = SubjectsSerializer(result, many=True)
         return JsonResponse(serializer.data, safe=False)
 
     
@@ -81,7 +81,7 @@ def Requirement(request):
     if request.method == 'GET':
         #TODO
         #해당 request에 대한 query를 DB에 요청하여 추출
-        dummyDict = {
+        result = {
             "special_option_idx" : 10, #해당 테이블 상 각  레코드의 고유 식별자
             "hashed_options" : "SW_AI_AI_NEW", #(학과+전공+트랙+입과경로)로 얻은 해시값
             "entry_year" : 2022,
@@ -94,4 +94,4 @@ def Requirement(request):
         }
 
         #Return Dummy Json
-        return JsonResponse(dummyDict)
+        return JsonResponse(result)

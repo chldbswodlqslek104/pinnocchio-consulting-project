@@ -2,7 +2,7 @@ from django.db import connection
 import pandas as pd
 import pymysql.cursors
 
-def GetQuerySetFromDataBases(request):
+def getQuerySetFromDatabasebySqlQueryInDataframe(request):
     try:
         connection = pymysql.connect(host='localhost', port=3306, user='root',
                                      password='freefree104460!', db='project',
