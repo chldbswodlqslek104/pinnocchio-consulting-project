@@ -125,7 +125,7 @@ class DjangoMigrations(models.Model):
         managed = False
         db_table = 'django_migrations'
         
-        
+
 class DjangoSession(models.Model):
     session_key = models.CharField(primary_key=True, max_length=40)
     session_data = models.TextField()
@@ -134,11 +134,9 @@ class DjangoSession(models.Model):
     class Meta:
         managed = False
         db_table = 'django_session'
-
-
-
  
-class Requirements(models.Model):
+
+class MicroCases(models.Model):
     special_option_idx = models.IntegerField(primary_key=True)
     hashed_options = models.CharField(max_length=40, blank=True, null=True)
     entry_year = models.IntegerField(blank=True, null=True)

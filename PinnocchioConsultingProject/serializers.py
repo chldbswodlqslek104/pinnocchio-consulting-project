@@ -1,14 +1,14 @@
 from rest_framework import serializers
-from  .models import Subjects, Requirements
+from  .models import Subjects, MicroCases
 
 class SubjectsSerializer(serializers.ModelSerializer):
      class Meta:
         model = Subjects
         fields = '__all__'
 
-class RequirementsSerializer(serializers.ModelSerializer):
+class MicroCasesSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Requirements
+        model = MicroCases
         fields = [
             "special_option_idx",
             "hashed_options",

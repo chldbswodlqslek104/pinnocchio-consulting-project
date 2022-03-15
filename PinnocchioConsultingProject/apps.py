@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class HostingConfig(AppConfig):
+class PinnocchioConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'hosting'
+    name = 'PinnocchioConsultingProject'
